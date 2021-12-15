@@ -19,7 +19,7 @@ void calc_core();
 int input_year()
 {
 	int year;
-	cout << "Ââåäèòå ãîä:";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð³Ð¾Ð´:";
 	cin >> year;
 	return year;
 }
@@ -27,7 +27,7 @@ int input_year()
 int input_month()
 {
 	int month;
-	cout << "Ââåäèòå ìåñÿö:";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼ÐµÑÑÑ†:";
 	cin >> month;
 	return month;
 }
@@ -41,44 +41,44 @@ int newyear()
 	const char *ng =  "%j" ;
 	strftime(buffer, 80, ng, timeinfo);
 	b = a - atoi(buffer);
-	cout << "Íîâûé ãîä ÷åðåç: " << b << endl;
+	cout << "ÐÐ¾Ð²Ñ‹Ð¹ Ð³Ð¾Ð´ Ñ‡ÐµÑ€ÐµÐ·: " << b << endl;
 	return 0;
 }
 int today()
 {
 	//time_t now = time(0);
 	//char* dt = ctime(&now);
-	//cout << "Òåêóùàÿ äàòà è âðåìÿ" << dt << endl;
+	//cout << "Ð¢ÐµÐºÑƒÑ‰Ð°Ñ Ð´Ð°Ñ‚Ð° Ð¸ Ð²Ñ€ÐµÐ¼Ñ" << dt << endl;
 	char buffer[80];
 	time_t seconds = time(NULL);
 	tm* timeinfo = localtime(&seconds);
 	const char* format = "%A, %B %d, %Y %I:%M:%S";
 	strftime(buffer, 80, format, timeinfo);
-	cout << "Ñåãîäíÿ: " << buffer << endl;
+	cout << "Ð¡ÐµÐ³Ð¾Ð´Ð½Ñ: " << buffer << endl;
 	return 0;
 }
 void output(int year, int month, int week, int is_leap_year) {
-	 const char* month_name[12] = { "ßíâàðü","Ôåâðàëü","Ìàðò","Àïðåëü","Ìàé","Èþíü","Èþëü","Àâãóñò","Ñåíòÿáðü","Îêòÿáðü","Íîÿáàðü","Äåêàáðü" };
-	const char* week_name[7] = { " Ïí "," Âò ","Ñð ","×ò ","Ïò ","Ñá ","Âñ " };
+	 const char* month_name[12] = { "Ð¯Ð½Ð²Ð°Ñ€ÑŒ","Ð¤ÐµÐ²Ñ€Ð°Ð»ÑŒ","ÐœÐ°Ñ€Ñ‚","ÐÐ¿Ñ€ÐµÐ»ÑŒ","ÐœÐ°Ð¹","Ð˜ÑŽÐ½ÑŒ","Ð˜ÑŽÐ»ÑŒ","ÐÐ²Ð³ÑƒÑÑ‚","Ð¡ÐµÐ½Ñ‚ÑÐ±Ñ€ÑŒ","ÐžÐºÑ‚ÑÐ±Ñ€ÑŒ","ÐÐ¾ÑÐ±Ð°Ñ€ÑŒ","Ð”ÐµÐºÐ°Ð±Ñ€ÑŒ" };
+	const char* week_name[7] = { " ÐŸÐ½ "," Ð’Ñ‚ ","Ð¡Ñ€ ","Ð§Ñ‚ ","ÐŸÑ‚ ","Ð¡Ð± ","Ð’Ñ " };
 	int days[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
-	// Â âèñîêîñíîì ãîäó óñòàíîâèòå ôåâðàëü íà 29 äíåé
+	// Ð’ Ð²Ð¸ÑÐ¾ÐºÐ¾ÑÐ½Ð¾Ð¼ Ð³Ð¾Ð´Ñƒ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚Ðµ Ñ„ÐµÐ²Ñ€Ð°Ð»ÑŒ Ð½Ð° 29 Ð´Ð½ÐµÐ¹
 	if (is_leap_year) {
 		days[1] = 29;
 	}
 	cout << endl;
-	// Îòîáðàæåíèå ãîäà è ìåñÿöà
+	// ÐžÑ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð³Ð¾Ð´Ð° Ð¸ Ð¼ÐµÑÑÑ†Ð°
 	cout << "    " << month_name[month] << "  " << year << endl;
-	// Îòîáðàæåíèå íàçâàíèÿ íåäåëè
+	// ÐžÑ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ñ Ð½ÐµÐ´ÐµÐ»Ð¸
 	int i = 0;
 	for (i = 0; i < 7; i++) {
 		cout << week_name[i] << " ";
 	}
 	cout << endl;
-	// Îòîáðàæåíèå ïóñòîãî ïîëÿ ïåðåä 1-ì ÷èñëîì êàæäîãî ìåñÿöà
+	// ÐžÑ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð¿ÑƒÑÑ‚Ð¾Ð³Ð¾ Ð¿Ð¾Ð»Ñ Ð¿ÐµÑ€ÐµÐ´ 1-Ð¼ Ñ‡Ð¸ÑÐ»Ð¾Ð¼ ÐºÐ°Ð¶Ð´Ð¾Ð³Ð¾ Ð¼ÐµÑÑÑ†Ð°
 	for (i = 0; i < week % 7; i++) {
 		cout << "    ";
 	}
-	// Îòîáðàæåíèå äàòû
+	// ÐžÑ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð´Ð°Ñ‚Ñ‹
 	for (i = 1; i <= days[month]; i++) {
 		if (i < 10) cout << "  " << i << " ";
 		else cout << " " << i << " ";
@@ -89,7 +89,7 @@ void output(int year, int month, int week, int is_leap_year) {
 	cout << endl;
 }
 
-// Ôîðìóëà Öåëåðà 
+// Ð¤Ð¾Ñ€Ð¼ÑƒÐ»Ð° Ð¦ÐµÐ»ÐµÑ€Ð°  
 int calc_week(int year, int month, int day)
 {
 	if (month <= 2)
@@ -108,7 +108,7 @@ int calc_week(int year, int month, int day)
 	return days;
 }
 
-// Ðàññ÷èòûâàåì, âèñîêîñíûé ëè ãîä
+// Ð Ð°ÑÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°ÐµÐ¼, Ð²Ð¸ÑÐ¾ÐºÐ¾ÑÐ½Ñ‹Ð¹ Ð»Ð¸ Ð³Ð¾Ð´
 int calc_leap_year(int year)
 {
 	if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
@@ -122,18 +122,18 @@ void calc_core()
 {
 	for (int i = 0;; i++)
 	{
-		if (i == 1) cout << "Ââåäèòå 0 äëÿ âûõîäà èç êàëåíäàðÿ" << endl;
+		if (i == 1) cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 0 Ð´Ð»Ñ Ð²Ñ‹Ñ…Ð¾Ð´Ð° Ð¸Ð· ÐºÐ°Ð»ÐµÐ½Ð´Ð°Ñ€Ñ" << endl;
 		int year = input_year();
 		if (year == 0) break;
 		if (year <= 1582)
 		{
-			cout << "Îøèáêà! Ââåäèòå ãîä ïîñëå 1582" << endl;
+			cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð³Ð¾Ð´ Ð¿Ð¾ÑÐ»Ðµ 1582" << endl;
 			break;
 		}
 		int month = input_month();
 		if (month <= 0 || month >= 13)
 		{
-			cout << "Îøèáêà! Ââåäèòå ïðàâèëüíûé ìåñÿö (1-12)" << endl;
+			cout << "ÐžÑˆÐ¸Ð±ÐºÐ°! Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ð¼ÐµÑÑÑ† (1-12)" << endl;
 			break;
 		}
 		int is_leap_year = calc_leap_year(year);
@@ -145,7 +145,7 @@ void calc_core()
 	}
 }
 
-//Îñíîâíàÿ ôóíêöèÿ
+//ÐžÑÐ½Ð¾Ð²Ð½Ð°Ñ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ
 int main()
 {
 	setlocale(LC_ALL, "ru");
