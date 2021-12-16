@@ -1,16 +1,19 @@
 body {
 	width: 700px;
 	height: 1000px;
-	border: black 3px solid;
+	
 	padding: 20px;
 	border-radius: 20px;
+	background-color: rgb(87, 79, 79);
+	
 }
 .head {
 	font-size: 30px;
 	margin-left: 160px;
+	text-shadow: rgb(184, 176, 176) 1px 0 10px;
 }
 .info {
-	color: rgb(105, 103, 103);
+	color: rgb(233, 233, 233);
 	font-size: 20px;
 }
 .text {
@@ -22,5 +25,11 @@ li {
 }
 .peuple {
 	font-size: 18px;
-	color: gray;
+	color: rgb(128, 9, 9);
+}
+.head{
+	margin-top: auto;
+	margin-left: 35%;
+	font-size: 40px;
+
 }
