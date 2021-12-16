@@ -1,6 +1,6 @@
 #include <iostream>
-#include <chrono> //для работы с таймером
-#include <thread> //для работы с потоком
+#include <chrono> //Г¤Г«Гї Г°Г ГЎГ®ГІГ» Г± ГІГ Г©Г¬ГҐГ°Г®Г¬
+#include <thread> //Г¤Г«Гї Г°Г ГЎГ®ГІГ» Г± ГЇГ®ГІГ®ГЄГ®Г¬
 using namespace std;
 using namespace std::chrono;
 
@@ -17,8 +17,8 @@ int main() {
             minutes = 0;
             hours++;
         }
-        this_thread::sleep_for(0.999s); //sleep_for - блокирует вызывающий поток
-        system("cls"); //очистка консоли
+        this_thread::sleep_for(0.999s); //sleep_for - ГЎГ«Г®ГЄГЁГ°ГіГҐГІ ГўГ»Г§Г»ГўГ ГѕГ№ГЁГ© ГЇГ®ГІГ®ГЄ
+        system("cls"); //Г®Г·ГЁГ±ГІГЄГ  ГЄГ®Г­Г±Г®Г«ГЁ
     }
     return 0;
 }
