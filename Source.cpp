@@ -2,6 +2,10 @@
 #include <chrono> //для работы с таймером
 #include <thread> //для работы с потоком
 #include <Windows.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <iomanip>
+#include <time.h> 
+#include <ctime>
 using namespace std;
 using namespace std::chrono;
 void SetColor(int text, int background)
