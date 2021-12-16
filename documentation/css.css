@@ -1,0 +1,26 @@
+body {
+	width: 700px;
+	height: 1000px;
+	border: black 3px solid;
+	padding: 20px;
+	border-radius: 20px;
+}
+.head {
+	font-size: 30px;
+	margin-left: 160px;
+}
+.info {
+	color: rgb(105, 103, 103);
+	font-size: 20px;
+}
+.text {
+	list-style-type: none;
+	font-size: 14px;
+}
+li {
+	margin: 6px;
+}
+.peuple {
+	font-size: 18px;
+	color: gray;
+}
