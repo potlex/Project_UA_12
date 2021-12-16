@@ -17,29 +17,29 @@ int main()
 	cout << "Ââåäèòå îïåðàöèþ: ";
 	cin >> operation;
 
-	raz = a - b;
+	dif = a - b;
 	sum = a + b;
-	proiz = a * b;
-	otnos = a / b;
+	mul = a * b;
+	div = a / b;
 
 	switch (operation)
 	{
 	case '-':
-		cout << a << " - " << b << " = " << raz << endl;
+		cout << a << " - " << b << " = " << dif << endl;
 		break;
 	case '+':
 		cout << a << " + " << b << " = " << sum << endl;
 		break;
 	case '*':
-		cout << a << " * " << b << " = " << proiz << endl;
+		cout << a << " * " << b << " = " << mul << endl;
 		break;
 	case '/':
-		cout << a << " / " << b << " = " << otnos << endl;
+		cout << a << " / " << b << " = " << div << endl;
 		break;
 	case ':':
-		cout << a << " : " << b << " = " << otnos << endl;
+		cout << a << " : " << b << " = " << div << endl;
 		break;
 	default:
-		cout << "Error" << endl;
+		cout << "Ошибка!" << endl;
 	}
 }
