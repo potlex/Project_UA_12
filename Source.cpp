@@ -14,9 +14,10 @@ void SetColor(int text, int background)
 	SetConsoleTextAttribute(hStdOut, (WORD)((background << 4) | text));
 }
 void timer();
-void calc();
-void raspis();
+void calculator();
+void schedule();
 void menu();
+void calender();
 
 int main()
 {
@@ -34,6 +35,7 @@ void menu()
 		<< "  1. Калькулятор" << endl
 		<< "  2. Расписание занятий" << endl
 		<< "  3. Таймер" << endl
+		<< "  4. Календарь" << endl
 		<< "Введите номер действия: ";
 	cin >> number;
 	switch (number)
@@ -50,12 +52,17 @@ void menu()
 	};
 	case 3:
 	{
+		timer();
+		break;
+	};
+	case 4:
+	{
 		calender();
 		break;
 	};
    }
 }
-	void calender()
+	void timer()
 	{
 		SetColor(10, 0);
 		short hours = 0, minutes = 0, seconds = 0;
