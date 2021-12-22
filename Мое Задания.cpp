@@ -26,6 +26,8 @@ void main() {
         break;
     case 10:cout << "Десятка" << endl;
         break;
+      case 10:cout << "Десятка" << endl;
+        break;       
     }
     do {
         cout << "Хотете продолжть? 1-да;0-нет ";
